@@ -3,6 +3,19 @@
 
 
 def maximo_encadenado(a: float, b: float, c: float) -> float:
+    mayor = a
+    if b > a:
+        mayor = b
+        if c > b:
+            mayor = c
+    print("El mayor es", mayor)                         #TAMBIÉN SE PUEDE UTILIZAR EL RETURN Y LUEGO UN PRINT
+   
+a = float(input("Ingresar el primer número: "))
+b = float(input("Ingresar el segundo número: "))
+c = float(input("Ingresar el tercer número: "))
+
+maximo_encadenado(a, b, c)
+
     """Toma 3 números y devuelve el máximo.
 
     Restricciones:
@@ -34,6 +47,18 @@ assert maximo_encadenado(24, 18, 18) == 24
 
 
 def maximo_cuadruple(a: float, b: float, c: float, d: float) -> float:
+    mayor = max(a, b, c, d)
+    print("El mayor es", mayor)
+    
+    
+
+a = float(input("Ingresar el primer número: "))
+b = float(input("Ingresar el segundo número: "))
+c = float(input("Ingresar el tercer número: "))
+d = float(input("Ingresar el cuarto número: "))
+
+maximo_cuadruple(a, b, c, d)
+    
     """Re-escribir para que tome 4 parámetros, utilizar la función max.
 
     Referencia: https://docs.python.org/3/library/functions.html#max"""
@@ -50,12 +75,18 @@ assert maximo_cuadruple(24, 9, 18, 30) == 30
 ###############################################################################
 
 
-def maximo_arbitrario(*args) -> float:
-    """Re-escribir para que tome una cantidad arbitraria de parámetros.
+def maximo_arbitrario(*args: float) -> float:
+   
+   for x in args:
+    mayor = max(args)
+   print(mayor)
+
+maximo_arbitrario(35, 20, 57, 800, 2)          #CONSULTAR: pedir al usuario los números
+
+
+ """Re-escribir para que tome una cantidad arbitraria de parámetros.
     Referencia: https://docs.python.org/3/tutorial/controlflow.html#arbitrary-argument-lists # noqa: E501
     """
-
-
 # NO MODIFICAR - INICIO
 assert maximo_arbitrario(1, 10, 5, -5) == 10
 assert maximo_arbitrario(4, 9, 18, 6) == 18
