@@ -19,10 +19,7 @@ assert sumatoria_basico(100) == 5050
 
 
 def sumatoria_sum(n: int) -> int:
-    resultado = sum(int(n))
-    return print(resultado)
-
-n = input("Ingresar un número: ")
+    
 
 sumatoria_sum(n)
 
