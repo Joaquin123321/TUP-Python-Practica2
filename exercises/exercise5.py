@@ -1,9 +1,16 @@
 """For, Sum, Reduce."""
 
 
-
 def sumatoria_basico(n: int) -> int:
- 
+    suma = 0
+    for i in range(1, n):
+        suma = suma + i
+    return suma
+
+
+n = int(input("Ingresar un número: "))
+print(sumatoria_basico(n))
+
 
 """Devuelve la suma de los números de 1 a N.
 
@@ -19,9 +26,12 @@ assert sumatoria_basico(100) == 5050
 
 
 def sumatoria_sum(n: int) -> int:
-    
+    suma = range(n), n
+    return sum(suma)
 
-sumatoria_sum(n)
+
+n = int(input("Ingresar un número: "))
+print(sumatoria_sum)
 
 """Re-Escribir utilizando la función sum.
 
@@ -41,9 +51,21 @@ from typing import Iterable  # noqa: E402
 
 
 def multiplicar_basico(numeros: Iterable[float]) -> float:
+    producto = 1
+    if not(numeros):
+        return 0
+
+    for i in range(numeros[0], numeros[-1]):
+        resultado += producto * i
+        return resultado
     
-    
-    """Toma un lista de números y devuelve el producto todos los númereos. Si
+
+
+numeros = [5, 6, 7, 8, 9]
+
+print(multiplicar_basico(numeros))
+
+    """Toma un lista de números y devuelve el producto de todos los númereos. Si
     la lista está vacia debe devolver 0.
 
     Restricciones:
