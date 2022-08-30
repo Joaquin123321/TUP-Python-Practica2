@@ -26,7 +26,7 @@ assert sumatoria_basico(100) == 5050
 
 
 def sumatoria_sum(n: int) -> int:
-    suma = range(n), n
+    suma = list(range(1, n, 1))
     return sum(suma)
 
 
@@ -55,15 +55,16 @@ def multiplicar_basico(numeros: Iterable[float]) -> float:
     if not(numeros):
         return 0
 
-    for i in range(numeros[0], numeros[-1]):
-        resultado += producto * i
-        return resultado
+    for i in range(numeros[0], numeros[-1]+1):
+        producto = producto * i
+    return producto
     
 
 
 numeros = [5, 6, 7, 8, 9]
 
 print(multiplicar_basico(numeros))
+print(multiplicar_basico([]))
 
     """Toma un lista de números y devuelve el producto de todos los númereos. Si
     la lista está vacia debe devolver 0.

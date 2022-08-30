@@ -87,7 +87,7 @@ def es_vocal_in(letra: str) -> bool:
     
     resultado = True
     while not(letra in "aeiou"):
-        resultado = False              #CONSULTAR: ¿se puede hacer de otra manera?
+        resultado = False              
         break
     return resultado                                             
 
