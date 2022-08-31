@@ -66,7 +66,8 @@ def superposicion_any(lista_1: Iterable[Any], lista_2: Iterable[Any]) -> bool:
     
     
     
-    """Re-Escribir utilizando la funcion any.
+    """Re-Escribir utilizando la funcion any. Toma dos listas y devuelve un booleano en base a si tienen al menos 1
+    elemento en común.
 
     Restricciones:
         - No utilizar bucles.
@@ -91,7 +92,7 @@ assert not superposicion_any(test_list, (2, "world", 30.85))
 
 def superposicion_set(lista_1: Iterable[Any], lista_2: Iterable[Any]) -> bool:
     
-    lista_1 & lista_2
+    return lista_1.disjoint(lista_2)
     
     """Re-Escribir utilizando conjuntos (sets).
 

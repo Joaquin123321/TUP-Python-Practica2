@@ -26,7 +26,7 @@ assert sumatoria_basico(100) == 5050
 
 
 def sumatoria_sum(n: int) -> int:
-    suma = list(range(1, n, 1))
+    suma = list(range(n), n)
     return sum(suma)
 
 
