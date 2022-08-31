@@ -1,9 +1,15 @@
+
 from typing import List, Union
 
 ###############################################################################
 
 
 def maximo_recursivo(*args) -> float:
+    
+    
+
+
+    
     """Toma una cantidad arbitraria de números y devuelve el mayor.
 
     Restricciónes:
@@ -11,7 +17,8 @@ def maximo_recursivo(*args) -> float:
         - No utilizar la ninguna otra función salvo maximo_recursivo
         - Resolver de manera recursiva
     """
-
+lista = [1, 10, 5, -5]
+print(maximo_recursivo(lista))
 
 # NO MODIFICAR - INICIO
 if __name__ == "__main__":
@@ -29,12 +36,22 @@ from functools import reduce  # noqa: E402
 
 
 def sumatoria_reduce(n: int) -> int:
+
+    lista = []
+    for x in range(0, n, 1):
+        lista.append(x)
+        lista_definitiva = reduce(lambda x, y: x + y, lista)
+    return lista_definitiva
+
+
     """Devuelve la suma de los números de 1 a N.
 
     Restricción: Utilizar la función reduce.
     Referencia: https://docs.python.org/3/library/functools.html#functools.reduce  # noqa: E501
     """
 
+n = int(input("Ingrese un número: "))
+print(sumatoria_reduce(n))
 
 # NO MODIFICAR - INICIO
 if __name__ == "__main__":

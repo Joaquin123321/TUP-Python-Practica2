@@ -32,7 +32,6 @@ print(combinar_basico(nombre_articulos, precio_articulos))
         - Utilizar la función range.
         - Utilizar índices.
     """
-print(combinar_basico(nombre_articulos, precio_articulos))
 
 # NO MODIFICAR - INICIO
 respuesta = (
@@ -53,8 +52,13 @@ id_articulos = [6852, 1459, 3578]
 
 def combinar_enumerate(nombres: List[str], precios: List[float], ids: List[int]) -> Tuple[Any]:  # noqa: E501
     
-    
-    
+    resultado = []
+    for x, y in enumerate(nombre_articulos):  #x: posición y: elemento
+        lista_parcial = y, precio_articulos[x], id_articulos[x]
+        resultado.append(lista_parcial)
+    return tuple(resultado)
+ 
+
     """Re-Escribir utilizando enumerate y agregando un nuevo componente.
 
     Restricción:
@@ -64,7 +68,7 @@ def combinar_enumerate(nombres: List[str], precios: List[float], ids: List[int])
 
     Referencia: https://docs.python.org/3/library/functions.html#enumerate
     """
-
+print(combinar_enumerate(nombre_articulos, precio_articulos, id_articulos))
 
 # NO MODIFICAR - INICIO
 respuesta = (
@@ -85,7 +89,8 @@ id_articulos = [6852, 1459, 3578]
 
 def combinar_zip(nombres: List[str], precios: List[float], ids: List[int]) -> Tuple[Any]:  # noqa: E501
     
-    resultado = list(zip(nombre_articulos, precio_articulos, id_articulos))
+    for x in nombre_articulos:
+        resultado = list(zip(nombre_articulos, precio_articulos, id_articulos))
     return resultado
     
     """Re-Escribir utilizando zip.
@@ -121,7 +126,11 @@ importado_articulos = [True, False, True]
 
 def combinar_zip_args(*args) -> Tuple[Any]:
 
-    for a, b, c, d, e in zip(nombre_articulos, precio_articulos, id_articulos, categoria_articulos, importado_articulos):
+    for x in nombre_articulos:
+        resultado = list(zip(*args))
+    return resultado
+    
+        
     
 
     """Re-Escribir utilizando zip y una cantidad arbitraria de componentes.
@@ -134,7 +143,7 @@ def combinar_zip_args(*args) -> Tuple[Any]:
 
     Referencia: https://docs.python.org/3/tutorial/controlflow.html#unpacking-argument-lists  # noqa: E501
     """
-combinar_zip_args(nombre_articulos, precio_articulos, id_articulos, categoria_articulos, importado_articulos)
+print(combinar_zip_args(nombre_articulos, precio_articulos, id_articulos, categoria_articulos, importado_articulos))
 
 # NO MODIFICAR - INICIO
 respuesta = (
